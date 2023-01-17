@@ -1,0 +1,31 @@
+.edit {
+    margin-top: 100px;
+    margin-left: 50px;
+
+    color:rgb(255, 255, 255);
+}
+
+.edits {
+    margin-top: 60px;
+    margin-left: 50px;
+
+    color:rgb(255, 255, 255);
+}
+
+/* Index links*/
+
+.hov{
+    color: rgb(255, 106, 0); 
+    font-size: 30px;
+}
+
+.hov:hover {
+    color:  rgb(255, 167, 35); 
+}
+.card-body {
+    color: black;
+}   
+
+
+
+

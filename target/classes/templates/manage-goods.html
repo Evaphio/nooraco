@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head :: head-fragment('Coffee Shop')">
+    
+</head>
+<body class="d-flex h-100  text-white bg-dark" cz-shortcut-listen="true">
+  <header th:replace="fragments/header :: header-fragment"></header>  
+    <div class="cover-container d-flex w-100 h-100 p-3  flex-column">
+
+          <div style = "padding-top: 20px;" >
+            <a th:href="@{/manage}" class="backbutton"><button type="button" class="btn btn-info btn-lg"><i class="fas fa-angle-left"></i> Back</button></a>
+              
+              <main class = "edits">
+                
+                    <h1 style="color: rgb(255, 106, 0); font-size: 60px; padding-bottom: 20px;">Edit products</h1>
+                
+                      
+                      <form class="form-signin" th:action="@{/manage-goods}" method="post" modelAttribute="uusiTuote" enctype="multipart/form-data">
+                <h1>Add a product</h1>
+                <!-- form -->
+                <div style="color:rgb(95, 95, 95);">
+                    <!-- Choose manfaturer -->
+                    
+                        <div class="form-floating">
+                            <select class="form-select" name="valmistaja">
+                                <option selected>Manufacturer</option>
+                                <option th:each="valmistaja : ${valmistajat}" th:text="${valmistaja.nimi}" th:value="${valmistaja.id}">valmistajat</option>
+                            </select>
+                        </div>
+                        <!-- Product name -->
+                        <div class="form-floating">
+                            <input maxlength="50" type="text" class="form-control" id="floatingTuoteNimi" name="nimi" placeholder="Tuotteen nimi" required>
+                            <label for="floatingTuoteNimi">Product name</label>
+                        </div>
+                        <!-- Product description -->
+                        <div class="form-floating">
+                            <textarea maxlength="255" name="kuvaus" rows="3" class="form-control" id="floatingTuoteKuvaus" placeholder="Tuotekuvaus" required></textarea>
+                            <label for="floatingTuoteKuvaus">Description</label>
+                        </div>
+                        <!-- Choose department -->
+                        <div class="form-floating">
+                            <select class="form-select" name="osasto">
+                                <option selected>Department</option>
+                                <option th:each="osasto : ${osastot}" th:text="${osasto.nimi}" th:value="${osasto.id}">osastot</option>
+                            </select>
+                        </div>
+                        <!-- Price -->
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="floatingTuotteenHinta" name="hinta" placeholder="Tuotteen hinta, esim. 9.99" required>
+                            <label for="floatingTuotteenHinta">Price</label>
+                        </div>
+                        <!-- Choose delivery -->
+                        <div class="form-floating">
+                            <select class="form-select" name="toimittaja">
+                                <option selected>Delivery company</option>
+                                <option th:each="toimittaja : ${toimittajat}" th:text="${toimittaja.nimi}" th:value="${toimittaja.id}">toimittajat</option>
+                            </select>
+                        </div>
+                        <!-- Upload picture -->
+                        <div class="input-group mb-3">
+                            <input type="file" class="form-control" name="tuotekuva" id="tuotekuva" required>
+                            <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
+                        </div>
+                    
+                    <button type="submit" class="btn btn-info">Save</button>
+                          </form>
+                </div>
+
+              
+                    </main>
+          </div>
+
+    </div>
+    
+    
+        
+      
+    
+    </body>
+</html>

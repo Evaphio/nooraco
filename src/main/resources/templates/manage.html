@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head :: head-fragment('Coffee Shop')"></head>
+<body>
+  <header th:replace="fragments/header :: header-fragment"></header>
+
+    
+      <main>
+        <div class="edit">
+          <h1 style="color: rgb(255, 106, 0); font-size: 60px; padding-bottom: 20px;">Edit information:</h1>
+          
+          <h1>Edit products: &nbsp; &nbsp; <a th:href="@{/manage-goods}"><button type="button" class="btn btn-info">>>></button></a></h1>
+   
+          <br>
+          <br>
+          <h1>Edit delivery company: &nbsp; &nbsp; <a th:href="@{/manage-delivery}"><button type="button" class="btn btn-info">>>></button></a></h1>
+          <br>
+          <br>
+          <h1>Edit manufacturer: &nbsp; &nbsp; <a th:href="@{/manage-manufacturer}"><button type="button" class="btn btn-info">>>></button></a></h1>
+        </div>
+      </main> 
+   
+    </body>
+</html>

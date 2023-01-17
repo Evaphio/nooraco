@@ -1,0 +1,36 @@
+.btn-light {
+    
+    margin-top: 1em;
+}
+
+.form-floating>label {
+    color: black;
+    padding-top: 5px;
+  }
+
+.tuoteImage {
+    width: 15rem;
+}
+
+.kuvaus-text {
+    text-align: left;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.tuote-kuva {
+    height: 10rem;
+}
+label {
+    text-shadow: none;
+}
+option {
+    background-color: azure;
+}
+.form-select{
+    background-color: azure;
+}
+
+
+
+

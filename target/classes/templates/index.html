@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head :: head-fragment('Coffee Shop')"></head>
+<body class="d-flex h-100 text-center text-white bg-dark" cz-shortcut-listen="true">
+  <header th:replace="fragments/header :: header-fragment"></header>  
+   
+      <main style="margin-top: 100px; margin-left: 30px;">
+        <h1 style="color: rgb(255, 255, 255); font-size: 60px; padding-bottom: 20px;">Welcome to Noora´s Coffee Shop!</h1>
+        <h2>Get the best <a th:href="@{/products}" class = "hov">coffee products</a> and <a th:href="@{/machines}" class = "hov">coffee machines</a> for your home or office!</h2>
+
+      </main>
+    
+
+ 
+    </body>
+</html>

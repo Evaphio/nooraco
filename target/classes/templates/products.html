@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head :: head-fragment('Coffee Shop')"></head>
+<body class="d-flex h-100 text-center text-white bg-dark" cz-shortcut-listen="true">
+<header th:replace="fragments/header :: header-fragment"></header>
+<!-- table with cards, if it has to be in the middle, use mx-auto -->
+    <div class="cover-container d-flex w-100 h-100 p-3  flex-column"> 
+        <main style="margin-top: 50px;">
+        <h1 style="color: rgb(255, 106, 0); font-size: 60px; padding-bottom: 20px;">Coffee Products</h1>
+        <div class="haku">
+          <form th:action="@{/search}" method="get" class="d-flex">
+            <div class="input-group">
+              <input type="search" name="hakusana" placeholder="Search by name..." aria-label="Search" class="form-control">
+              <button class="btn btn-info" type="submit">Search</button>
+              <button class="btn btn-info" type="button" id="btnClear" onclick="clearSearch()">Clear</button>
+            </div>
+          </form>
+        </div> 
+
+        <!-- card -->
+
+      
+        <div class="container">
+          <div class="row">    
+           <!-- row-cols-md-4  - number of cards in a roww -->    
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                  <div th:each="kulutustuote : ${products}" class="col">
+                    <div class="card shadow-sm" >
+                      <figure>
+                          <img class="img-fluid tuote-kuva" th:src="@{/kulutustuote/tuoteKuva/{id}(id=${kulutustuote.id})}" alt="Kuva tuotteesta">
+                      </figure>
+                          <div class="card-body tuotetiedot">
+                            <p th:text="${kulutustuote.nimi}"></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="btn-group">
+                                <h5 th:text="'Price: ' + ${kulutustuote.hinta} + '€'"></h5>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </main>
+
+
+    </div>
+    <script type="text/javascript">
+      function clearSearch() {
+          window.location = "[[@{/products}]]";
+      }
+  </script>
+</body>
+</html>

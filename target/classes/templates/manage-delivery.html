@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head :: head-fragment('Coffee Shop')">
+    
+</head>
+<body class="d-flex h-100  text-white bg-dark" cz-shortcut-listen="true">
+
+    <header th:replace="fragments/header :: header-fragment"></header>
+    
+    <div >
+      <div style = "padding-top: 40px; padding-left: 20px;">
+        <a th:href="@{/manage}" class="backbutton"><button type="button" class="btn btn-info btn-lg"><i class="fas fa-angle-left"></i> Back</button></a>
+          <main class = "edits">
+            <h1 style="color: rgb(255, 106, 0); font-size: 60px; padding-bottom: 20px;">Delivery company</h1>
+            <br>
+            
+          <!-- Add deliver -->
+                <h1 >Add a delivery company</h1>
+            <div style="color:rgb(95, 95, 95);">
+              <form class="form-signin" th:action="@{/manage-delivery/}" method="POST">
+                  <div class="form-floating">
+                      <input type="text" class="form-control" name="nimi" placeholder="text" required>
+                      <label for="floatingToimittajanNimi">Delivery company name</label>
+                  </div>
+                  <div class="form-floating">
+                      <input type="text" class="form-control" name="yhteyshenkilo" placeholder="Yhteyshenkilo" required>
+                      <label for="floatingToimittajanYhteyshenkilö">Contact person</label>
+                  </div>
+                  <div class="form-floating">
+                      <input type="text" class="form-control" name="yhteyshenkilonEmail" placeholder="email" required>
+                      <label for="floatingYhteyshenkilonSahkoposti">e-mail</label>
+                  </div>
+                  <br>
+                  <button type="submit" class="btn btn-info">Save</button>
+              </form>
+            </div>
+          
+
+            
+          </main>
+      </div>
+    
+ 
+    </div>
+    
+    
+        
+ 
+    </body>
+</html>
